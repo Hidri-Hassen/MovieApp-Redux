@@ -19,7 +19,7 @@ const MovieCard = ({ movie,deleteMovie }) => {
           </a>
           <div className="icon">
           <FontAwesomeIcon className="faicons" icon="trash" onClick={()=>{deleteMovie(movie.id)}}/>
-          <AddModal className="faedit" cardInfo={movie}/>
+          <AddModal cardInfo={movie}/>
   
           </div>
       <div className="card__info-hover">

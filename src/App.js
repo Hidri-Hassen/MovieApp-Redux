@@ -4,7 +4,8 @@ import "./App.css";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faEdit} from '@fortawesome/free-solid-svg-icons'
-library.add(faTrash,faEdit)
+import { faPlusSquare} from '@fortawesome/free-solid-svg-icons'
+library.add(faTrash,faEdit,faPlusSquare)
 
 
 

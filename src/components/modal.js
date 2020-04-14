@@ -28,28 +28,16 @@ class AddModal extends Component {
       this.setState({
         newMovie: { ...this.state.newMovie, [e.target.name]: e.target.value }
       });
-      // handelAddMovie = e => {
-      //   e.preventDefault();
-    
-      //   if (Object.values(this.state.newMovie).indexOf("") === -1) {
-      //     this.props.addMovie(this.state.newMovie);
-      //     this.setState({
-      //       modalIsOpen: false,
-      //       newMovie: {
-      //         title: "",
-      //         year: "",
-      //         image: "",
-      //         rate: ""
-      //       }
-      //     });
-      //   } else alert("Enter a valid info");
-      // };
+ 
       handelAddMovie = e => {
       e.preventDefault();
       this.props.cardInfo 
       ?
       this.props.editMovie({
-      newMovie:this.state.newMovie,
+      title:this.state.newMovie.title,
+      year:this.state.newMovie.year,
+      image:this.state.newMovie.image,
+      rate:this.state.newMovie.rate,
       id:this.props.cardInfo.id
     },
     this.setState({
@@ -57,12 +45,25 @@ class AddModal extends Component {
     })
     )
       :
-      this.props.addMovie({newMovie:this.state.newMovie},
+      this.props.addMovie({
+        title:this.state.newMovie.title,
+      year:this.state.newMovie.year,
+      image:this.state.newMovie.image,
+      rate:this.state.newMovie.rate
+      },
       this.setState({
-        modalIsOpen: false,
+         
+          modalIsOpen: false,
+          newMovie: {
+            title: "",
+            year: "",
+            image: "",
+            rate: ""
+          }
+        
       })
       )
-      // alert("Enter a valid info");
+      
     };
   
     render() {
@@ -70,7 +71,7 @@ class AddModal extends Component {
   
       return (
         <div>
-          <FontAwesomeIcon className="Add-btn" icon="edit"  onClick={this.openModal}/>
+          <FontAwesomeIcon className={this.props.cardInfo ? "faedit" : "Add-btn"} icon={this.props.cardInfo ? "edit" : "plus-square"}  onClick={this.openModal}/>
           <Modal
             className="add-modal"
             isOpen={this.state.modalIsOpen}

@@ -1,6 +1,6 @@
 import React from "react";
 import MovieCard from "./movieCard";
-// import AddModal from "./modal";
+import AddModal from "./modal";
 
 
 
@@ -11,7 +11,7 @@ const MovieList = ({moviesData}) => {
         <MovieCard key={i} movie={el} />
       ))}
      
-      {/* <AddModal /> */}
+      <AddModal />
      
     </div>
   );
