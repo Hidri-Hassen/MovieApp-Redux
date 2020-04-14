@@ -14,9 +14,7 @@ const MovieCard = ({ movie,deleteMovie }) => {
   return (
 
     <article className="card card--1">
-       <a href="https://en.wikipedia.org/wiki/City_of_Angels_(film)" className="link" title="author">
-              Read More...
-          </a>
+      
           <div className="icon">
           <FontAwesomeIcon className="faicons" icon="trash" onClick={()=>{deleteMovie(movie.id)}}/>
           <AddModal cardInfo={movie}/>
