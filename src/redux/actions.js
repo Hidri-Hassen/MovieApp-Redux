@@ -1,18 +1,5 @@
 import { ADD_MOVIE, DELETE_MOVIE, EDIT_MOVIE } from "./actionType.js"
 
-    // export const inputSearch = valueInput => {
-    //     return {
-    //         type: SEARCH_INPUT,
-    //         valueInput
-    //     };
-    // };
-
-    //     export const starSearch = clickStar => {
-    //         return {
-    //             type: SEARCH_STAR,
-    //             clickStar
-    //         };
-    //     };
 
 export const addMovie = payload => {
   return {
